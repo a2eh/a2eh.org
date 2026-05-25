@@ -600,7 +600,31 @@
         object-fit: cover; /* Remplit bien l'espace sans déformer */
         border-radius: 8px;
     }
-}  </style>
+/* --- CORRECTIONS POUR MOBILE --- */
+@media (max-width: 768px) {
+    /* Empêche le décalage horizontal et l'espace vide à droite */
+    body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+    }
+
+    /* Force les images et logos à rester dans leur conteneur */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Réduit la taille de la grille galerie sur mobile */
+    .activities-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Force le header à ne pas dépasser la largeur de l'écran */
+    header {
+        width: 100% !important;
+        padding: 10px !important;
+    }
+ }  </style>
 </head>
 <body>
 
