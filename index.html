@@ -575,7 +575,32 @@
             height: auto !important;
         }
     }
-       </style>
+    @media (max-width: 768px) {
+    /* --- HAUT DE PAGE --- */
+    header {
+        flex-direction: column !important;
+        text-align: center;
+        padding: 20px 10px !important;
+    }
+    .logo-box img {
+        width: 150px !important; 
+        height: auto !important;
+        margin-bottom: 15px;
+    }
+
+    /* --- GALERIE D'IMAGES --- */
+    .activities-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; /* Affiche 2 images par ligne */
+        gap: 10px !important;
+    }
+    .activities-grid img {
+        width: 100% !important;
+        height: 150px !important;
+        object-fit: cover; /* Remplit bien l'espace sans déformer */
+        border-radius: 8px;
+    }
+}  </style>
 </head>
 <body>
 
