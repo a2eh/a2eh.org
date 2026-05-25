@@ -553,7 +553,29 @@
     img {
         height: auto !important;
      }       
-    </style>
+/* --- ADAPTATION MOBILE --- */
+    @media (max-width: 768px) {
+        header {
+            flex-direction: column !important;
+            padding: 10px !important;
+        }
+        .logo-box {
+            margin-bottom: 10px !important;
+        }
+        .logo-box img {
+            width: 100px !important;
+        }
+        
+        /* --- NETTOYAGE GÉNÉRAL MOBILE --- */
+        * {
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+        }
+        img {
+            height: auto !important;
+        }
+    }
+       </style>
 </head>
 <body>
 
