@@ -4,627 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> A2EH | Agir Emsemble pour les Enfants Handicapés - Accueil</title>
-    <style>
-   section { scroll-margin-top: 100px; }
-        /* ==========================================================================
-           1. RÉINITIALISATION & CONFIGURATION GÉNÉRALE
-           ========================================================================== */
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-        }
-        
-        html { 
-            scroll-behavior: smooth; 
-        }
-        
-        body { 
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; 
-            line-height: 1.6; 
-            background-color: #f8fafc; 
-            color: #20242c; 
-            overflow-x: hidden; 
-        }
+  <style>
+    /* 1. FORCE LA LARGEUR MAXIMALE POUR TOUT LE SITE */
+    html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* C'est la règle prioritaire contre l'espace à droite */
+    }
+    
+    * { box-sizing: border-box; } /* Force le calcul des tailles incluant les marges */
 
-        /* ==========================================================================
-           2. EN-TÊTE & NAVIGATION (HEADER)
-           ========================================================================== */
-        header { 
-            padding: 15px 40px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            background: #ffffff; 
-            border-bottom: 3px solid #00A8E8; 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); 
-        }
-        
-        .logo-box { 
-            display: flex; 
-            align-items: center; 
-            gap: 15px; 
-        }
-        
-        .logo-box img { 
-            width: 140px; 
-            height: auto; 
-        }
-        
-        .logo-text span { 
-            display: block; 
-        }
-        
-        nav ul { 
-            display: flex; 
-            list-style: none; 
-            gap: 20px; 
-        }
-        
-        nav a { 
-            text-decoration: none; 
-            color: #20242c; 
-            font-weight: 600; 
-            font-size: 0.95rem; 
-            transition: color 0.3s ease; 
-        }
-        
-        nav a:hover { 
-            color: #00A8E8; 
-        }
-
-        /* ==========================================================================
-           3. SECTION PRINCIPALE (HERO SECTION)
-           ========================================================================== */
-        .hero { 
-            background-color: #ffffff; 
-            color: #20242c; 
-            padding: 110px 20px 90px 20px; 
-            text-align: center; 
-            border-bottom: 1px solid #cbd5e0; 
-        }
-        
-        .hero h1 { 
-            font-size: 2.2rem; 
-            margin-bottom: 15px; 
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-            font-weight: 800; 
-            color: #20242c; 
-            line-height: 1.3; 
-        }
-        
-        .hero h1 span { 
-            color: #00A8E8; 
-            display: block; 
-            margin-top: 5px; 
-            font-size: 1.6rem; 
-        }
-        
-        .hero p { 
-            font-size: 1.2rem; 
-            color: #20242c; 
-            margin-top: 20px; 
-            margin-bottom: 40px; 
-            font-weight: 500; 
-        }
-        
-        .btn { 
-            display: inline-block; 
-            padding: 15px 45px; 
-            background: transparent; 
-            color: #00A8E8; 
-            text-decoration: none; 
-            border-radius: 50px; 
-            font-weight: bold; 
-            border: 2px solid #00A8E8; 
-            font-size: 0.85rem; 
-            text-transform: uppercase; 
-            letter-spacing: 0.5px; 
-            transition: all 0.3s ease; 
-        }
-        
-        .btn:hover { 
-            background: #00A8E8; 
-            color: #ffffff; 
-            transform: translateY(-2px); 
-            box-shadow: 0 4px 12px rgba(0, 168, 232, 0.2); 
-        }
-
-        /* ==========================================================================
-           4. BLOC STATISTIQUES & CHIFFRES CLÉS
-           ========================================================================== */
-        .stats-grid { 
-            display: grid; 
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 20px; 
-            max-width: 850px; 
-            margin: -40px auto 60px auto; 
-            padding: 30px; 
-            background: #ffffff; 
-            border-radius: 15px; 
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); 
-            border: 1px solid #cbd5e0; 
-            text-align: center; 
-            position: relative; 
-            z-index: 10; 
-        }
-        
-        .stat-item h3 { 
-            font-size: 2.5rem; 
-            color: #00A8E8; 
-            font-weight: 800; 
-            margin-bottom: 5px; 
-        }
-        
-        .stat-item p { 
-            font-size: 0.95rem; 
-            color: #20242c; 
-            font-weight: 600; 
-        }
-
-        /* ==========================================================================
-           5. BLOCS DE CONTENU, FORMATIONS & GALERIES
-           ========================================================================== */
-        .content-box { 
-            max-width: 850px; 
-            margin: 0 auto 50px auto; 
-            padding: 50px; 
-            background: #ffffff; 
-            border-radius: 15px; 
-            border: 2px solid #cbd5e0; 
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); 
-        }
-        
-        h2 { 
-            color: #20242c; 
-            margin-bottom: 25px; 
-            font-size: 1.6rem; 
-            position: relative; 
-            display: inline-block; 
-            font-weight: 700; 
-        }
-        
-        h2::after { 
-            content: ''; 
-            position: absolute; 
-            left: 0; 
-            bottom: -6px; 
-            width: 50px; 
-            height: 4px; 
-            background-color: #00A8E8; 
-            border-radius: 2px; 
-        }
-        
-        .content-box p { 
-            margin-bottom: 20px; 
-            color: #20242c; 
-            font-size: 1.05rem; 
-            text-align: justify; 
-            font-weight: normal; 
-        }
-        
-        .content-box strong { 
-            color: #20242c; 
-            font-weight: bold; 
-        }
-
-        /* Style de la liste des formations */
-        .formation-list {
-            list-style: none;
-            margin-top: 15px;
-        }
-
-        .formation-list li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 12px;
-            font-size: 1.05rem; 
-            color: #20242c; 
-        }
-
-        .formation-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #00A8E8;
-            font-weight: bold;
-        }
-
-        /* SOUS-TITRES DE LA GALERIE */
-        .gallery-subtitle {
-            font-size: 1.15rem;
-            color: #00A8E8;
-            margin: 35px 0 15px 0;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-left: 3px solid #00A8E8;
-            padding-left: 10px;
-        }
-
-        .activities-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
-            gap: 15px; 
-            margin-bottom: 20px;
-        }
-        
-        .activities-grid img { 
-            width: 100%; 
-            height: 180px; 
-            object-fit: cover; 
-            border-radius: 10px; 
-            border: 2px solid #cbd5e0; 
-            transition: transform 0.2s ease, box-shadow 0.2s ease; 
-            cursor: pointer; /* Indique clairement que l'image est cliquable */
-        }
-        
-        .activities-grid img:hover { 
-            transform: scale(1.03); 
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        /* ==========================================================================
-           MODAL LIGHTBOX (Agrandissement d'image au clic)
-           ========================================================================== */
-        .lightbox {
-            display: none; /* Caché par défaut */
-            position: fixed;
-            z-index: 2000; /* Par-dessus le header collant */
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(15, 23, 42, 0.95); /* Arrière-plan sombre premium */
-            backdrop-filter: blur(5px); /* Flou esthétique en arrière-plan */
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .lightbox.active {
-            display: flex;
-            opacity: 1;
-        }
-
-        .lightbox-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 80vh;
-            border-radius: 12px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            border: 3px solid #ffffff;
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
-        }
-
-        .lightbox.active .lightbox-content {
-            transform: scale(1);
-        }
-
-        .lightbox-caption {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #ffffff;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-align: center;
-            background-color: rgba(32, 36, 44, 0.85);
-            padding: 10px 20px;
-            border-radius: 50px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            max-width: 80%;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 30px;
-            right: 40px;
-            color: #ffffff;
-            font-size: 40px;
-            font-weight: bold;
-            transition: color 0.2s ease;
-            cursor: pointer;
-            user-select: none;
-            width: 50px;
-            height: 50px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            line-height: 1;
-        }
-
-        .lightbox-close:hover {
-            color: #00A8E8;
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        /* Desactive le scroll du body quand la lightbox est active */
-        body.lightbox-open {
-            overflow: hidden;
-        }
-
-        /* ==========================================================================
-           6. SECTION PARTENAIRES ENRICHIE
-           ========================================================================== */
-       .partners-grid { 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    gap: 20px; 
-    flex-wrap: wrap; 
-    margin-top: 30px;     
-   }
-     .partners-grid img { 
-    height: 60px; /* Ajustez cette valeur pour agrandir ou réduire la hauteur */
-    width: auto;  /* Garde les proportions d'origine */
-    object-fit: contain;
-    padding: 5px;
-    background-color: #f1f5f9;
-    border-radius: 10px;
-    border: 1px solid #cbd5e0;
-    transition: all 0.2s ease; 
-     }
-
-        .partner-logo:hover {
-           transform: translateY(-3px);
-    background-color: #ffffff;
-    border-color: #00A8E8;
-    box-shadow: 0 6px 12px rgba(0, 168, 232, 0.1);     
-     }
-
-        /* ==========================================================================
-           7. FORMULAIRE DE CONTACT
-           ========================================================================== */
-        .contact-form { 
-            display: flex; 
-            flex-direction: column; 
-            gap: 20px; 
-            margin-top: 25px; 
-        }
-        
-        .form-group { 
-            display: flex; 
-            flex-direction: column; 
-            gap: 8px; 
-        }
-        
-        .form-group label { 
-            font-weight: 600; 
-            font-size: 0.9rem; 
-            color: #20242c; 
-        }
-        
-        .form-group input, 
-        .form-group textarea, 
-        .form-group select { 
-            padding: 14px; 
-            border: 2px solid #20242c; 
-            border-radius: 8px; 
-            font-family: inherit; 
-            font-size: 1rem; 
-            color: #20242c; 
-            background-color: #ffffff; 
-        }
-        
-        .form-group input:focus, 
-        .form-group textarea:focus, 
-        .form-group select:focus { 
-            outline: none; 
-            border-color: #00A8E8; 
-            box-shadow: 0 0 0 3px rgba(0, 168, 232, 0.1); 
-        }
-        
-        .btn-submit { 
-            background: #00A8E8; 
-            color: #ffffff; 
-            border: none; 
-            padding: 16px; 
-            border-radius: 8px; 
-            font-weight: bold; 
-            cursor: pointer; 
-            font-size: 1rem; 
-            text-transform: uppercase; 
-            letter-spacing: 0.5px; 
-            transition: background-color 0.2s ease; 
-        }
-        
-        .btn-submit:hover { 
-            background: #0086b8; 
-        }
-
-        /* ==========================================================================
-           8. PIED DE PAGE (FOOTER)
-           ========================================================================== */
-        footer { 
-            background: #20242c; 
-            color: #ffffff; 
-            padding: 60px 20px; 
-            text-align: center; 
-            font-size: 0.95rem; 
-            border-top: 4px solid #00A8E8; 
-        }
-        
-        footer p { 
-            color: #ffffff; 
-            margin-bottom: 8px; 
-        }
-        
-        footer strong { 
-            color: #ffffff; 
-        }
-        
-        footer a { 
-            color: #00A8E8; 
-            text-decoration: none; 
-            font-weight: bold; 
-        }
-        
-        footer a:hover { 
-            text-decoration: underline; 
-        }
-
-        /* ==========================================================================
-           9. ANIMATIONS (FADE-IN)
-           ========================================================================== */
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-            visibility: hidden;
-        }
-        
-        .fade-in-section.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-            visibility: visible;
-        }
-
-        /* ==========================================================================
-           10. RESPONSIVE DESIGN
-           ========================================================================== */
-        @media (max-width: 768px) {
-            header { 
-                flex-direction: column; 
-                gap: 15px; 
-                text-align: center; 
-                padding: 20px; 
-            }
-            
-            .hero h1 { 
-                font-size: 1.6rem; 
-            }
-            
-            .hero h1 span { 
-                font-size: 1.2rem; 
-            }
-            
-            .stats-grid { 
-                grid-template-columns: 1fr; 
-                gap: 25px; 
-                margin-top: 30px; 
-            }
-            
-            .content-box { 
-                padding: 30px 20px; 
-            }
-            
-            .partners-container { 
-                gap: 20px; 
-            }
-
-            .lightbox-close {
-                top: 20px;
-                right: 20px;
-                width: 40px;
-                height: 40px;
-                font-size: 30px;
-            }
- /* --- ADAPTATION MOBILE --- */
-@media (max-width: 768px) {
+    /* 2. EN-TÊTE FIXE POUR MOBILE */
     header {
-        flex-direction: column;
-        padding: 10px;
+        width: 100%;
+        padding: 15px;
+        display: flex;
+        flex-direction: column; /* Force le logo et le menu l'un en dessous de l'autre */
+        align-items: center;
+        background: #ffffff;
+        border-bottom: 3px solid #00A8E8;
     }
     
     .logo-box {
-        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        justify-content: center;
     }
     
-    .logo-box img {
-        width: 100px;
-    }
-/* --- NETTOYAGE GÉNÉRAL MOBILE --- */
-    * {
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-    }
-    img {
-        height: auto !important;
-     }       
-/* --- ADAPTATION MOBILE --- */
-    @media (max-width: 768px) {
-        header {
-            flex-direction: column !important;
-            padding: 10px !important;
-        }
-        .logo-box {
-            margin-bottom: 10px !important;
-        }
-        .logo-box img {
-            width: 100px !important;
-        }
-        
-        /* --- NETTOYAGE GÉNÉRAL MOBILE --- */
-        * {
-            max-width: 100% !important;
-            box-sizing: border-box !important;
-        }
-        img {
-            height: auto !important;
-        }
-    }
-    @media (max-width: 768px) {
-    /* --- HAUT DE PAGE --- */
-    header {
-        flex-direction: column !important;
-        text-align: center;
-        padding: 20px 10px !important;
-    }
-    .logo-box img {
-        width: 150px !important; 
-        height: auto !important;
-        margin-bottom: 15px;
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 10px;
+        flex-wrap: wrap; /* Permet au menu de passer à la ligne si nécessaire */
+        justify-content: center;
+        margin-top: 10px;
     }
 
-    /* --- GALERIE D'IMAGES --- */
+    /* 3. GALERIE ET CONTENU */
     .activities-grid {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important; /* Affiche 2 images par ligne */
-        gap: 10px !important;
-    }
-    .activities-grid img {
-        width: 100% !important;
-        height: 150px !important;
-        object-fit: cover; /* Remplit bien l'espace sans déformer */
-        border-radius: 8px;
-    }
-/* --- CORRECTIONS POUR MOBILE --- */
-@media (max-width: 768px) {
-    /* Empêche le décalage horizontal et l'espace vide à droite */
-    body {
-        overflow-x: hidden !important;
-        width: 100% !important;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2 colonnes forcées */
+        gap: 10px;
+        width: 100%;
+        padding: 0 10px;
     }
 
-    /* Force les images et logos à rester dans leur conteneur */
-    img {
-        max-width: 100% !important;
-        height: auto !important;
+    .content-box {
+        width: 95%; /* Un peu moins de 100% pour éviter le collage aux bords */
+        margin: 20px auto;
+        padding: 20px;
     }
 
-    /* Réduit la taille de la grille galerie sur mobile */
-    .activities-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
+    /* 4. ADAPTATION ORDINATEUR (Écrans larges) */
+    @media (min-width: 769px) {
+        header { flex-direction: row; justify-content: space-between; padding: 20px 40px; }
+        .logo-box { justify-content: flex-start; }
+        nav ul { gap: 20px; }
+        .activities-grid { grid-template-columns: repeat(4, 1fr); }
     }
-
-    /* Force le header à ne pas dépasser la largeur de l'écran */
-    header {
-        width: 100% !important;
-        padding: 10px !important;
-    }
- }  </style>
+</style>
 </head>
 <body>
 
